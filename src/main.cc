@@ -32,10 +32,13 @@ int main() {
     cam.max_depth = 50; // Allow rays to bounce up to 50 times into the scene
 
     // Configure the camera to look from point (-2, 2, 1) towards the center of the scene at (0, 0, -1), with a vertical field of view of 90 degrees and a camera-relative "up" direction of (0, 1, 0).
-    cam.vfov     = 90; // change field of view
+    cam.vfov     = 50; // change field of view
     cam.lookfrom = point3(-2,2,1);
     cam.lookat   = point3(0,0,-1);
     cam.vup      = vec3(0,1,0);
+
+    cam.defocus_angle = 10.0;
+    cam.focus_dist    = 3.4;
 
     cam.render(world);
 }
